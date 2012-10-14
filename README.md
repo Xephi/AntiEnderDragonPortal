@@ -1,9 +1,7 @@
 AntiEnderDragonPortal
 ====================
 
-This plugin prevent the portal spawning after 
+This plugin prevent the portal spawning after an EnderDragon Death.
 
-an EnderDragon Death, in world that you can select in
-
-the config.yml
+The plugin take effect in world that you can select in the config.yml
 
