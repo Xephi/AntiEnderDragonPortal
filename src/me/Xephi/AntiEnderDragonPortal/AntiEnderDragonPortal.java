@@ -10,7 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class AntiEnderDragonPortal extends JavaPlugin{
 	
-	PluginManager pm;
+	PluginManager pluginmanager;
 	public static FileConfiguration config;
 	public final Logger log = Logger.getLogger("Minecraft");
 	
@@ -31,9 +31,9 @@ public class AntiEnderDragonPortal extends JavaPlugin{
 			log.info(String.format("[AntiEnderDragonPortal] Default Config is created"));
 			log.info(String.format("[AntiEnderDragonPortal] Configuration is loaded"));
 		}
-		pm  = this.getServer().getPluginManager();
-		Listener listen = new AntiEnderDragonPortalListener(this);
-		pm.registerEvents(listen, this);
+		pluginmanager  = this.getServer().getPluginManager();
+		Listener listener = new AntiEnderDragonPortalListener(this);
+		pluginmanager.registerEvents(listener, this);
 		System.out.println("[AntiEnderDragonPortal] 1.0.0 version is enabled");
 	}
 }
