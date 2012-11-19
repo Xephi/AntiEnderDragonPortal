@@ -1,5 +1,6 @@
 package me.Xephi.AntiEnderDragonPortal;
 
+import org.bukkit.entity.EnderDragon;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -15,11 +16,8 @@ public class AntiEnderDragonPortalListener implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGH)
 	public void onEntityCreatePortalEvent(EntityCreatePortalEvent event) {
-		for(String world : AntiEnderDragonPortal.config.getStringList("Worlds")){
-			if(event.getEntity().getWorld().getName().equalsIgnoreCase(world)){
-				event.setCancelled(true);
-				
-			}
+		if (event.getEntity() instanceof EnderDragon && main.worldList.contains(event.getEntity().getWorld().getName())){
+			event.setCancelled(true);
 		}
 	}
 }
